@@ -41,8 +41,8 @@ function ValidarEmail()
 
     // Función para validar el correo electrónico
    
-     emailRegex.test(email);
-    if(parte1 == null ||parte2 == null || parte3 == null)
+     let respuesta = emailRegex.test(email);
+    if(respuesta = false)
     {
         console.log("Entro")
         alert("No es de tipo email")
