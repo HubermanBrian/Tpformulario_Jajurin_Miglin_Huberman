@@ -6,7 +6,7 @@ let confirmacion
 nombre = document.getElementById("Nombre")
 email = document.getElementById("Email")
 contraseña = document.getElementById("Contraseña")
-confirmacion = document.getElementById("Confirmacion")
+confirmacion = document.getElementById("Confirmar")
 const boton = document.getElementById("button");
 
 
@@ -51,5 +51,34 @@ function ValidarEmail()
     else
     {
         AbleButton()
+    }
+}
+
+function ValidarContraseña()
+{
+   respuesta1= /[a-zA-Z]/.test(contraseña.value) 
+    respuest2= /[0-9]/.test(contraseña.value);
+    if(contraseña.value.length<8 || respuesta1 == false || respuest2 == false )
+        {
+            console.log("Entro")
+            alert("Necesitas mas de 8 caracteres y tienen que tener letras y numeros")
+            DisableButton()
+        }
+        else
+        {
+            AbleButton()
+        }
+}
+
+function ConfirmarContraseña()
+{
+    if(contraseña.value === confirmacion.value)
+    {
+        AbleButton()
+    }
+    else
+    {
+        DisableButton()
+        
     }
 }
